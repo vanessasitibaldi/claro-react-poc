@@ -1,0 +1,34 @@
+[
+    {
+        "id": 1,
+        "titleProduct": "3G",
+        "price": "R$ 49,99/mês",
+        "characteristics": "App Ilimitados",
+        "portabilidade": "",
+        "url": "https://planoscelular.claro.com.br/claro/pt/cart"
+    },
+    {
+        "id": 2,
+        "titleProduct": "8G",
+        "price": "R$ 49,99/mês",
+        "characteristics": "App Ilimitados +4GB ",
+        "portabilidade": "+4GB bônus de portabilidade",
+        "url": "https://planoscelular.claro.com.br/claro/pt/cart"
+    },
+    {
+        "id": 3,
+        "titleProduct": "10G",
+        "price": "R$ 64,99/mês",
+        "characteristics": "App Ilimitados +5GB ",
+        "portabilidade": "+5GB bônus de portabilidade",
+        "url": "https://planoscelular.claro.com.br/claro/pt/cart"
+    },
+    {
+        "id": 4,
+        "titleProduct": "15G",
+        "price": "R$ 64,99/mês",
+        "characteristics": "App Ilimitados +5GB ",
+        "portabilidade": "+5GB bônus de portabilidade",
+        "url": "https://planoscelular.claro.com.br/claro/pt/cart"
+    }
+]
