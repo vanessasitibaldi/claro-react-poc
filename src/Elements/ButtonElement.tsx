@@ -14,8 +14,7 @@ const ButtonElement: React.FC<ButtonElementProps> = ({ url }) => {
 
 
     const onClickButton = () => {
-        return console.log('props')
-
+        window.location.replace(url);
     }
 
     return (
@@ -23,16 +22,15 @@ const ButtonElement: React.FC<ButtonElementProps> = ({ url }) => {
             <Button
                 primary
                 md // set your ModifierColor of Button. Ex: primary (default), primaryInverse, secondary, secondaryInverse 
+                onClick={onClickButton}
                 config={
                     {
                         isDisabled: false,                    // if you want a disabled Button
                         data: 'data-attribute',                // data attribute to Button
-                        handleClick: onClickButton,   // when you needed passing a function to onClick Button
                     }
                 }>
                 Eu quero!
         </Button>
-
         </Fragment>
     );
 }
