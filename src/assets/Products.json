@@ -13,7 +13,7 @@
         "price": "R$ 49,99/mês",
         "characteristics": "App Ilimitados +4GB ",
         "portabilidade": "+4GB bônus de portabilidade",
-        "url": "https://planoscelular.claro.com.br/claro/pt/cart"
+        "url": "https://planoscelular.claro.com.br/claro/pt/offer-plan/externalUri?offerPlanId=20289&paymentMethod=debitcard&city=sao-paulo&state=BR-SP&loyalty=true"
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "price": "R$ 64,99/mês",
         "characteristics": "App Ilimitados +5GB ",
         "portabilidade": "+5GB bônus de portabilidade",
-        "url": "https://planoscelular.claro.com.br/claro/pt/cart"
+        "url": "https://planoscelular.claro.com.br/claro/pt/offer-plan/externalUri?offerPlanId=20289&paymentMethod=debitcard&city=sao-paulo&state=BR-SP&loyalty=true"
     },
     {
         "id": 4,
@@ -29,6 +29,6 @@
         "price": "R$ 64,99/mês",
         "characteristics": "App Ilimitados +5GB ",
         "portabilidade": "+5GB bônus de portabilidade",
-        "url": "https://planoscelular.claro.com.br/claro/pt/cart"
+        "url": "https://planoscelular.claro.com.br/claro/pt/offer-plan/externalUri?offerPlanId=20289&paymentMethod=debitcard&city=sao-paulo&state=BR-SP&loyalty=true"
     }
 ]
