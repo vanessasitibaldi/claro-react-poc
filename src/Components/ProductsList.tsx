@@ -1,9 +1,10 @@
-import React from 'react';
-import productsList from '../assets/Products.json'
+import React, { useEffect } from 'react';
+import productsList from '../assets/Products.json';
 import '../assets/styles/Styles.css';
 import { Heading, Subtitle, Text } from 'mondrian-react';
-import CardElement from '../Elements/CardElement'
-
+import CardElement from '../Elements/CardElement';
+import { useSelector, useDispatch } from 'react-redux';
+import { productsRequest } from '../Core/Ducks/productCatalogDucks';
 const { Fragment } = React;
 
 interface ProductListProps {
@@ -13,17 +14,24 @@ interface ProductListProps {
 }
 
 const ProductList: React.FC<ProductListProps> = ({ title, subtitle, descricao }) => {
-    console.log('productsList', productsList)
 
-    const renderProductList = () => {
-        return productsList.map(item => {
-            return (
-                <div key={item.id} className="cardsProducts">
-                    <CardElement title={item.titleProduct} price={item.price} url={item.url} />
-                </div>
-            )
-        })
-    }
+    const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(productsRequest())
+    }, [dispatch])
+
+    const productsList = useSelector(state => console.log('state', state))
+
+    // const renderProductList = () => {
+    //     return productsList.map(item => {
+    //         return (
+    //             <div key={item.id} className="cardsProducts">
+    //                 <CardElement title={item.titleProduct} price={item.price} url={item.url} />
+    //             </div>
+    //         )
+    //     })
+    // }
 
     return (
         <Fragment>
@@ -33,7 +41,7 @@ const ProductList: React.FC<ProductListProps> = ({ title, subtitle, descricao })
                     <Heading md="true">{title}</Heading>
                     <Text body>{descricao}</Text>
                 </div>
-                {renderProductList()}
+                {/* {renderProductList()} */}
             </div>
         </Fragment>
     );
