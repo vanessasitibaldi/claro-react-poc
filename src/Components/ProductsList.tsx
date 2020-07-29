@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import productsList from '../assets/Products.json';
+import React, { useEffect, useState } from 'react';
+// import productsList from '../assets/Products.json';
 import '../assets/styles/Styles.css';
 import { Heading, Subtitle, Text } from 'mondrian-react';
 import CardElement from '../Elements/CardElement';
@@ -12,26 +12,34 @@ interface ProductListProps {
     subtitle: string;
     descricao: string
 }
+interface DefaultRootState {
+    productsReducer: any
+}
+
 
 const ProductList: React.FC<ProductListProps> = ({ title, subtitle, descricao }) => {
 
     const dispatch = useDispatch();
-
     useEffect(() => {
+        console.log('uma vez')
         dispatch(productsRequest())
-    }, [dispatch])
 
-    const productsList = useSelector(state => console.log('state', state))
+    }, [])
 
-    // const renderProductList = () => {
-    //     return productsList.map(item => {
-    //         return (
-    //             <div key={item.id} className="cardsProducts">
-    //                 <CardElement title={item.titleProduct} price={item.price} url={item.url} />
-    //             </div>
-    //         )
-    //     })
-    // }
+    const productsList = useSelector((state: DefaultRootState) => state.productsReducer.payload[5]) || [];
+
+    console.log('productsList', productsList)
+
+    const renderProductList = () => {
+        // return products.map(product => {
+        //     console.log('product >>>>>', product)
+        //     return (
+        //         <div key={product.id} className="cardsProducts">
+        //             <CardElement title={product.titleProduct} price={product.price} url={product.url} />
+        //         </div>
+        //     )
+        // })
+    }
 
     return (
         <Fragment>

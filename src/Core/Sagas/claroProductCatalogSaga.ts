@@ -5,12 +5,15 @@ import { productsSuccess, productsFailure, ProcuctsTypes } from '../Ducks/produc
 
 
 export function* getProducts() {
-    console.log('entrou saga')
 
     try {
-        const response = yield call(api.get, '/clarowebservices/v2/claro/catalogs/claroProductCatalog')
-        console.log('response saga', response)
-        yield put(productsSuccess(response));
+        const response = yield call(api.get, '/clarowebservices/v2/claro/catalogs/claroProductCatalog');
+
+        const listProduct = response.data.catalogVersions[1].categories[5].subcategories[3].subcategories || [];
+
+        if (listProduct) {
+            yield put(productsSuccess(listProduct));
+        }
 
     } catch (err) {
         console.log('err', err)

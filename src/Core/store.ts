@@ -2,7 +2,7 @@ import { createStore, applyMiddleware, Store } from 'redux';
 
 import createSagaMiddleware from 'redux-saga';
 import Reducers from './Ducks';
-import sagas from './Sagas/claroProductCatalog'
+import sagas from './Sagas/claroProductCatalogSaga'
 import { productsState } from './Ducks/productCatalogDucks';
 
 export interface ApplicationState {
