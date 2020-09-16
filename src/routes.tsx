@@ -8,7 +8,9 @@ import Checkout from './Pages/Checkout';
 
 
 const Routes = () => {
+
     return (
+
         <BrowserRouter>
             <Route component={Home} path="/" exact />
             <Route path="/planos-controle" component={PlanosControle} />

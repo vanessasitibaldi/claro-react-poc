@@ -1,55 +1,51 @@
-import React, { useEffect, useState } from 'react';
-// import productsList from '../assets/Products.json';
-import '../assets/styles/Styles.css';
-import { Heading, Subtitle, Text } from 'mondrian-react';
+import React from 'react';
+import Slider from 'infinite-react-carousel';
+
 import CardElement from '../Elements/CardElement';
-import { useSelector, useDispatch } from 'react-redux';
-import { productsRequest } from '../Core/Ducks/productCatalogDucks';
+import '../assets/styles/Styles.css';
 const { Fragment } = React;
 
+
+interface price {
+    value: number;
+}
+interface product {
+    code: string;
+    name: string;
+    price: price;
+    url: string;
+}
+
 interface ProductListProps {
-    title: string;
-    subtitle: string;
-    descricao: string
-}
-interface DefaultRootState {
-    productsReducer: any
+    listProducts: product[]
 }
 
+const settingsSlider = {
+    arrows: false,
+    arrowsBlock: false,
+    dots: true,
+    slidesToShow: 5,
+    slidesToScroll: 5,
+}
 
-const ProductList: React.FC<ProductListProps> = ({ title, subtitle, descricao }) => {
+const ProductList: React.FC<ProductListProps> = ({ listProducts }) => {
+    console.log('listProducts comp >>>', listProducts)
 
-    const dispatch = useDispatch();
-    useEffect(() => {
-        console.log('uma vez')
-        dispatch(productsRequest())
-
-    }, [])
-
-    const productsList = useSelector((state: DefaultRootState) => state.productsReducer.payload[5]) || [];
-
-    console.log('productsList', productsList)
-
-    const renderProductList = () => {
-        // return products.map(product => {
-        //     console.log('product >>>>>', product)
-        //     return (
-        //         <div key={product.id} className="cardsProducts">
-        //             <CardElement title={product.titleProduct} price={product.price} url={product.url} />
-        //         </div>
-        //     )
-        // })
-    }
 
     return (
         <Fragment>
             <div id="productList">
-                <div className="titleList">
-                    <Subtitle sm="true">{subtitle}</Subtitle>
-                    <Heading md="true">{title}</Heading>
-                    <Text body>{descricao}</Text>
-                </div>
-                {/* {renderProductList()} */}
+                <Slider {...settingsSlider}>
+                    <div>
+                        {listProducts && listProducts.map((product, i) => {
+                            return (
+                                <div data-index={i} key={product.code} className="cardsProducts">
+                                    <CardElement title={product.name} price={product.price.value} url={product.url} />
+                                </div>
+                            )
+                        })}
+                    </div>
+                </Slider>
             </div>
         </Fragment>
     );

@@ -14,6 +14,7 @@
     "@types/react-router-dom": "^5.1.5",
     "@types/redux-saga": "^0.10.5",
     "axios": "^0.19.2",
+    "infinite-react-carousel": "^1.2.11",
     "mondrian-react": "git+http://designopsci:0PMFFRHO@gitdev.net.com.br/designops/mondrian-react.git#master",
     "mondrian-tokens": "git+http://designopsci:0PMFFRHO@gitdev.net.com.br/designops/mondrian-tokens.git#master",
     "mondrian-vanilla": "git+http://designopsci:0PMFFRHO@gitdev.net.com.br/designops/mondrian-vanilla.git#master",

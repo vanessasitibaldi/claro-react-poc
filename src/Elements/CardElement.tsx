@@ -8,7 +8,7 @@ const { Fragment } = React;
 
 interface Cardprops {
     title: string;
-    price: string;
+    price: number;
     url: string;
 }
 
